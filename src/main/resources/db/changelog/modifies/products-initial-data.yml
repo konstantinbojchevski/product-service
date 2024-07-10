@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: kbojchevski
+      changes:
+        - loadData:
+            tableName: products
+            file: db/data/product.csv

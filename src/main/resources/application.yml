@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/products
+    username: ${DATABASE-USER}
+    password: ${DATABASE-PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-root.yml
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      hibernate:
+        springframework: DEBUG
+        hibernate: DEBUG
+        SQL: debug
